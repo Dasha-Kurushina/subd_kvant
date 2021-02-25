@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-02-25T06:59:31.351Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36" etag="ztXVxY4iCyzV4MQpuWc3" version="14.4.3" type="github">
+<mxfile host="app.diagrams.net" modified="2021-02-25T07:00:37.461Z" agent="5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/88.0.4324.182 Safari/537.36" etag="JU71X0t_9-HUYPpWCBgV" version="14.4.3" type="github">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="868" dy="425" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -11,7 +11,7 @@
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="500" y="138" />
-              <mxPoint x="500" y="188" />
+              <mxPoint x="500" y="183" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -22,7 +22,7 @@
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="500" y="138" />
-              <mxPoint x="500" y="88" />
+              <mxPoint x="500" y="93" />
             </Array>
           </mxGeometry>
         </mxCell>
@@ -116,13 +116,13 @@
           <mxGeometry x="170" y="167.5" width="70" height="45" as="geometry" />
         </mxCell>
         <mxCell id="0Tz-Ho_IqmYAWqOtKeM1-7" value="Направление" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="523.75" y="67.5" width="90" height="40" as="geometry" />
+          <mxGeometry x="523.75" y="72.5" width="90" height="40" as="geometry" />
         </mxCell>
         <mxCell id="0Tz-Ho_IqmYAWqOtKeM1-8" value="Уровень обучения" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="531.25" y="117.5" width="75" height="40" as="geometry" />
         </mxCell>
         <mxCell id="0Tz-Ho_IqmYAWqOtKeM1-9" value="Группа" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
-          <mxGeometry x="540" y="167.5" width="57.5" height="40" as="geometry" />
+          <mxGeometry x="540" y="162.5" width="57.5" height="40" as="geometry" />
         </mxCell>
         <mxCell id="0Tz-Ho_IqmYAWqOtKeM1-10" value="Номер приказа о зачислении" style="ellipse;whiteSpace=wrap;html=1;" vertex="1" parent="WIyWlLk6GJQsqaUBKTNV-1">
           <mxGeometry x="400" y="197.5" width="106" height="50" as="geometry" />
