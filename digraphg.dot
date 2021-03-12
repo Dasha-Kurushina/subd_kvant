@@ -1,0 +1,96 @@
+digraph g { 
+	rankdir = LR
+	"Квантумы" [shape=rect];
+	"Уровени обучения" [shape=rect];
+	"Учащиеся" [shape=rect];
+	"Сертификаты" [shape=rect];
+	"Учебные группы" [shape=rect];
+	"Адреса" [shape=rect];
+	"Классы" [shape=rect];
+	"Учебные заведения" [shape=rect];
+	"Города" [shape=rect];
+	"Приказы" [shape=rect];
+	"Люди" [shape=rect];
+	"Преподаватели" [shape=rect];
+	"Родители" [shape=rect];
+	"Директора" [shape=rect];
+	"Контактные лица" [shape=rect];
+
+	Kvantum_Prepodavatel [shape=diamond, label="n:m"];
+	Kvantum_Uroven_obuchenija [shape=diamond, label="n:m"];
+	Uroven_obuchenija_Prepodavatel [shape=diamond, label="n:m"];
+	Uroven_obuchenija_Gruppa [shape=diamond, label="n:1"];
+	Uchashhijsja_Adres [shape=diamond, label="n:1"];
+	Uchashhijsja_Uchebnoe_zavedenie [shape=diamond, label="n:1"];
+	Uchashhijsja_Klass [shape=diamond, label="n:1"];
+	Uchashhijsja_Ljudi [shape=diamond, label="n:m"];
+	Uchashhijsja_Roditel [shape=diamond, label="n:1"];
+	Uchashhijsja_Gruppa [shape=diamond, label="n:m"];
+	Uchashhijsja_Sertifikat [shape=diamond, label="n:1"];
+	Sertifikat_Prikaz [shape=diamond, label="n:1"];
+	Uchashhijsja_Prikaz [shape=diamond, label="n:m"];
+	Adres_Gorod [shape=diamond, label="n:1"];
+	Uchebnoe_zavedenie_Adres [shape=diamond, label="n:1"];
+	Uchebnoe_zavedenie_Direktor [shape=diamond, label="n:1"];
+	Uchebnoe_zavedenie_Kontaktnoe_lico [shape=diamond, label="n:1"];
+	Prepodavatel_Ljudi [shape=diamond, label="n:m"];
+	Direktor_Ljudi [shape=diamond, label="n:m"];
+	Kontaktnoe_lico_Ljudi [shape=diamond, label="n:m"];
+	Roditel_Ljudi [shape=diamond, label="n:m"];
+    
+	"Квантумы" -> "Название квантума" [arrowhead="none"] 
+	"Квантумы" -> Kvantum_Prepodavatel -> "Преподаватели" [arrowhead="none"]
+	"Квантумы" -> Kvantum_Uroven_obuchenija -> "Уровени обучения" [arrowhead="none"]
+
+	"Уровени обучения" -> "Уровень" [arrowhead="none"]
+	"Уровени обучения" -> Uroven_obuchenija_Prepodavatel -> "Преподаватели" [arrowhead="none"]
+	"Уровени обучения" -> "Количество часов" [arrowhead="none"]
+	"Уровени обучения" -> Uroven_obuchenija_Gruppa -> "Учебные группы" [arrowhead="none"]
+
+	"Учащиеся" -> Uchashhijsja_Adres -> "Адреса" [arrowhead="none"]
+	"Учащиеся" -> Uchashhijsja_Uchebnoe_zavedenie -> "Учебные заведения" [arrowhead="none"]
+	"Учащиеся" -> Uchashhijsja_Klass -> "Классы" [arrowhead="none"]
+	"Учащиеся" -> Uchashhijsja_Ljudi -> "Люди" [arrowhead="none"]
+	"Учащиеся" -> Uchashhijsja_Roditel -> "Родители" [arrowhead="none"]
+	"Учащиеся" -> Uchashhijsja_Gruppa -> "Учебные группы" [arrowhead="none"]
+	"Учащиеся" -> Uchashhijsja_Prikaz -> "Приказы" [arrowhead="none"]
+	"Учащиеся" -> Uchashhijsja_Sertifikat -> "Сертификаты" [arrowhead="none"]
+
+	"Приказы" -> "Вид приказа" [arrowhead="none"]
+
+	"Сертификаты" -> "Номер сертификата" [arrowhead="none"]
+	"Сертификаты" -> Sertifikat_Prikaz -> "Приказы" [arrowhead="none"]
+
+	"Учебные группы" -> "Название группы" [arrowhead="none"]
+	"Учебные группы" -> "Год зачисления" [arrowhead="none"]
+
+	"Адреса" -> "Полный адрес" [arrowhead="none"]
+	"Адреса" -> Adres_Gorod -> "Города" [arrowhead="none"]
+
+	"Классы" -> "Номер класса" [arrowhead="none"]
+
+	"Учебные заведения" -> Uchebnoe_zavedenie_Adres -> "Адреса" [arrowhead="none"]
+	"Учебные заведения" -> "Название учебного заведения" [arrowhead="none"]
+	"Учебные заведения" -> Uchebnoe_zavedenie_Direktor -> "Директора" [arrowhead="none"]
+	"Учебные заведения" -> Uchebnoe_zavedenie_Kontaktnoe_lico -> "Контактные лица" [arrowhead="none"]
+
+	"Города" -> "Название города" [arrowhead="none"]
+
+	"Приказы" -> "Номер приказа" [arrowhead="none"]
+	"Приказы" -> "Текст" [arrowhead="none"]
+
+	"Преподаватели" -> Prepodavatel_Ljudi -> "Люди" [arrowhead="none"]
+	
+	"Директора" -> Direktor_Ljudi -> "Люди" [arrowhead="none"]
+
+	"Контактные лица" -> Kontaktnoe_lico_Ljudi -> "Люди" [arrowhead="none"]
+
+	"Родители" -> Roditel_Ljudi -> "Люди" [arrowhead="none"]
+	
+	"Люди" -> "ФИО" [arrowhead="none"]
+	"Люди" -> "Номер телефона" [arrowhead="none"]
+	"Люди" -> "Адрес электронной почты" [arrowhead="none"]
+
+
+}
+
