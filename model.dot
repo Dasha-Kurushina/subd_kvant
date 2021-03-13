@@ -1,0 +1,234 @@
+digraph g { 
+	graph [ rankdir = "LR" ];
+
+    "Kvantumy" [
+    shape=none
+    label = <
+      <table border="0" cellspacing="0" cellborder="1">
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Kvantumy </font></td></tr>
+<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Nazvanie_kvantuma </font></td><td align="left"><font color="#535353"> text </font></td></tr>
+      </table>
+    >];
+    "Uchebnye_gruppy" [
+    shape=none
+    label = <
+      <table border="0" cellspacing="0" cellborder="1">
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Uchebnye_gruppy </font></td></tr>
+<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Nazvanie_gruppy </font></td><td align="left"><font color="#535353"> text </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> God_zachislenija </font></td><td align="left"><font color="#535353"> text </font></td></tr>
+      </table>
+    >];
+    "Uroveni_obuchenija" [
+    shape=none
+    label = <
+      <table border="0" cellspacing="0" cellborder="1">
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Uroveni_obuchenija </font></td></tr>
+<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Uroven </font></td><td align="left"><font color="#535353"> text </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Kolichestvo </font></td><td align="left"><font color="#535353"> chasov text </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Uchebnye_gruppy_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      </table>
+    >];
+    "Adresa" [
+    shape=none
+    label = <
+      <table border="0" cellspacing="0" cellborder="1">
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Adresa </font></td></tr>
+<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Polnyj_adres </font></td><td align="left"><font color="#535353"> text </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Goroda_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      </table>
+    >];
+    "Uchebnye_zavedenija" [
+    shape=none
+    label = <
+      <table border="0" cellspacing="0" cellborder="1">
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Uchebnye_zavedenija </font></td></tr>
+<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Nazvanie_uchebnogo_zavedenija </font></td><td align="left"><font color="#535353"> text </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Adresa_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Direktora_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Kontaktnye_lica_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      </table>
+    >];
+    "Klassy" [
+    shape=none
+    label = <
+      <table border="0" cellspacing="0" cellborder="1">
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Klassy </font></td></tr>
+<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Nomer_klassa </font></td><td align="left"><font color="#535353"> text </font></td></tr>
+      </table>
+    >];
+    "Roditeli" [
+    shape=none
+    label = <
+      <table border="0" cellspacing="0" cellborder="1">
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Roditeli </font></td></tr>
+<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr>
+      </table>
+    >];
+    "Sertifikaty" [
+    shape=none
+    label = <
+      <table border="0" cellspacing="0" cellborder="1">
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Sertifikaty </font></td></tr>
+<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Nomer_sertifikata </font></td><td align="left"><font color="#535353"> text </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Prikazy_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      </table>
+    >];
+    "Uchashhiesja" [
+    shape=none
+    label = <
+      <table border="0" cellspacing="0" cellborder="1">
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Uchashhiesja </font></td></tr>
+<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Adresa_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Uchebnye_zavedenija_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Klassy_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Roditeli_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Sertifikaty_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      </table>
+    >];
+    "Prikazy" [
+    shape=none
+    label = <
+      <table border="0" cellspacing="0" cellborder="1">
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Prikazy </font></td></tr>
+<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Vid_prikaza </font></td><td align="left"><font color="#535353"> text </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Nomer_prikaza </font></td><td align="left"><font color="#535353"> text </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Tekst </font></td><td align="left"><font color="#535353"> text </font></td></tr>
+      </table>
+    >];
+    "Goroda" [
+    shape=none
+    label = <
+      <table border="0" cellspacing="0" cellborder="1">
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Goroda </font></td></tr>
+<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Nazvanie_goroda </font></td><td align="left"><font color="#535353"> text </font></td></tr>
+      </table>
+    >];
+    "Direktora" [
+    shape=none
+    label = <
+      <table border="0" cellspacing="0" cellborder="1">
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Direktora </font></td></tr>
+<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr>
+      </table>
+    >];
+    "Kontaktnye_lica" [
+    shape=none
+    label = <
+      <table border="0" cellspacing="0" cellborder="1">
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Kontaktnye_lica </font></td></tr>
+<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr>
+      </table>
+    >];
+    "Ljudi" [
+    shape=none
+    label = <
+      <table border="0" cellspacing="0" cellborder="1">
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Ljudi </font></td></tr>
+<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> FIO </font></td><td align="left"><font color="#535353"> text </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Nomer_telefona </font></td><td align="left"><font color="#535353"> text </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Adres_jelektronnoj_pochty </font></td><td align="left"><font color="#535353"> text </font></td></tr>
+      </table>
+    >];
+    "Prepodavateli" [
+    shape=none
+    label = <
+      <table border="0" cellspacing="0" cellborder="1">
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Prepodavateli </font></td></tr>
+<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr>
+      </table>
+    >];
+    "Kvantum_Prepodavatel" [
+    shape=none
+    label = <
+      <table border="0" cellspacing="0" cellborder="1">
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Kvantum_Prepodavatel </font></td></tr>
+<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Kvantumy_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Prepodavateli_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      </table>
+    >];
+    "Kvantum_Uroven_obuchenija" [
+    shape=none
+    label = <
+      <table border="0" cellspacing="0" cellborder="1">
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Kvantum_Uroven_obuchenija </font></td></tr>
+<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Kvantumy_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Uroveni_obuchenija_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      </table>
+    >];
+    "Uroven_obuchenija_Prepodavatel" [
+    shape=none
+    label = <
+      <table border="0" cellspacing="0" cellborder="1">
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Uroven_obuchenija_Prepodavatel </font></td></tr>
+<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Uroveni_obuchenija_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Prepodavateli_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      </table>
+    >];
+    "Uchashhijsja_Ljudi" [
+    shape=none
+    label = <
+      <table border="0" cellspacing="0" cellborder="1">
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Uchashhijsja_Ljudi </font></td></tr>
+<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Uchashhiesja_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Ljudi_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      </table>
+    >];
+    "Uchashhijsja_Gruppa" [
+    shape=none
+    label = <
+      <table border="0" cellspacing="0" cellborder="1">
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Uchashhijsja_Gruppa </font></td></tr>
+<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Uchashhiesja_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Uchebnye_gruppy_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      </table>
+    >];
+    "Uchashhijsja_Prikaz" [
+    shape=none
+    label = <
+      <table border="0" cellspacing="0" cellborder="1">
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Uchashhijsja_Prikaz </font></td></tr>
+<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Uchashhiesja_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Prikazy_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      </table>
+    >];
+    "Prepodavatel_Ljudi" [
+    shape=none
+    label = <
+      <table border="0" cellspacing="0" cellborder="1">
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Prepodavatel_Ljudi </font></td></tr>
+<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Prepodavateli_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Ljudi_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      </table>
+    >];
+    "Direktor_Ljudi" [
+    shape=none
+    label = <
+      <table border="0" cellspacing="0" cellborder="1">
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Direktor_Ljudi </font></td></tr>
+<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Direktora_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Ljudi_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      </table>
+    >];
+    "Kontaktnoe_lico_Ljudi" [
+    shape=none
+    label = <
+      <table border="0" cellspacing="0" cellborder="1">
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Kontaktnoe_lico_Ljudi </font></td></tr>
+<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Kontaktnye_lica_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Ljudi_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      </table>
+    >];
+    "Roditel_Ljudi" [
+    shape=none
+    label = <
+      <table border="0" cellspacing="0" cellborder="1">
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Roditel_Ljudi </font></td></tr>
+<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Roditeli_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Ljudi_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      </table>
+    >];	 Uroveni_obuchenija -> Uchebnye_gruppy [arrowhead="none"]
+	 Adresa -> Goroda [arrowhead="none"]
+	 Uchebnye_zavedenija -> Adresa [arrowhead="none"]
+	 Uchebnye_zavedenija -> Direktora [arrowhead="none"]
+	 Uchebnye_zavedenija -> Kontaktnye_lica [arrowhead="none"]
+	 Sertifikaty -> Prikazy [arrowhead="none"]
+	 Uchashhiesja -> Adresa [arrowhead="none"]
+	 Uchashhiesja -> Uchebnye_zavedenija [arrowhead="none"]
+	 Uchashhiesja -> Klassy [arrowhead="none"]
+	 Uchashhiesja -> Roditeli [arrowhead="none"]
+	 Uchashhiesja -> Sertifikaty [arrowhead="none"]
+	 Kvantum_Prepodavatel -> Kvantumy [arrowhead="none"]
+	 Kvantum_Prepodavatel -> Prepodavateli [arrowhead="none"]
+	 Kvantum_Uroven_obuchenija -> Kvantumy [arrowhead="none"]
+	 Kvantum_Uroven_obuchenija -> Uroveni_obuchenija [arrowhead="none"]
+	 Uroven_obuchenija_Prepodavatel -> Uroveni_obuchenija [arrowhead="none"]
+	 Uroven_obuchenija_Prepodavatel -> Prepodavateli [arrowhead="none"]
+	 Uchashhijsja_Ljudi -> Uchashhiesja [arrowhead="none"]
+	 Uchashhijsja_Ljudi -> Ljudi [arrowhead="none"]
+	 Uchashhijsja_Gruppa -> Uchashhiesja [arrowhead="none"]
+	 Uchashhijsja_Gruppa -> Uchebnye_gruppy [arrowhead="none"]
+	 Uchashhijsja_Prikaz -> Uchashhiesja [arrowhead="none"]
+	 Uchashhijsja_Prikaz -> Prikazy [arrowhead="none"]
+	 Prepodavatel_Ljudi -> Prepodavateli [arrowhead="none"]
+	 Prepodavatel_Ljudi -> Ljudi [arrowhead="none"]
+	 Direktor_Ljudi -> Direktora [arrowhead="none"]
+	 Direktor_Ljudi -> Ljudi [arrowhead="none"]
+	 Kontaktnoe_lico_Ljudi -> Kontaktnye_lica [arrowhead="none"]
+	 Kontaktnoe_lico_Ljudi -> Ljudi [arrowhead="none"]
+	 Roditel_Ljudi -> Roditeli [arrowhead="none"]
+	 Roditel_Ljudi -> Ljudi [arrowhead="none"]
+}

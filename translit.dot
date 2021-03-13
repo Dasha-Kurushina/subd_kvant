@@ -1,0 +1,96 @@
+digraph g {
+	"Kvantumy"
+	"Uroveni_obuchenija"
+	"Uchashhiesja"
+	"Sertifikaty"
+	"Uchebnye_gruppy"
+	"Adresa"
+	"Klassy"
+	"Uchebnye_zavedenija"
+	"Goroda"
+	"Prikazy"
+	"Ljudi"
+	"Prepodavateli"
+	"Roditeli"
+	"Direktora"
+	"Kontaktnye_lica"
+
+	Kvantum_Prepodavatel [shape=diamond, label="n:m"];
+	Kvantum_Uroven_obuchenija [shape=diamond, label="n:m"];
+	Uroven_obuchenija_Prepodavatel [shape=diamond, label="n:m"];
+	Uroven_obuchenija_Gruppa [shape=diamond, label="n:1"];
+	Uchashhijsja_Adres [shape=diamond, label="n:1"];
+	Uchashhijsja_Uchebnoe_zavedenie [shape=diamond, label="n:1"];
+	Uchashhijsja_Klass [shape=diamond, label="n:1"];
+	Uchashhijsja_Ljudi [shape=diamond, label="n:m"];
+	Uchashhijsja_Roditel [shape=diamond, label="n:1"];
+	Uchashhijsja_Gruppa [shape=diamond, label="n:m"];
+	Uchashhijsja_Sertifikat [shape=diamond, label="n:1"];
+	Sertifikat_Prikaz [shape=diamond, label="n:1"];
+	Uchashhijsja_Prikaz [shape=diamond, label="n:m"];
+	Adres_Gorod [shape=diamond, label="n:1"];
+	Uchebnoe_zavedenie_Adres [shape=diamond, label="n:1"];
+	Uchebnoe_zavedenie_Direktor [shape=diamond, label="n:1"];
+	Uchebnoe_zavedenie_Kontaktnoe_lico [shape=diamond, label="n:1"];
+	Prepodavatel_Ljudi [shape=diamond, label="n:m"];
+	Direktor_Ljudi [shape=diamond, label="n:m"];
+	Kontaktnoe_lico_Ljudi [shape=diamond, label="n:m"];
+	Roditel_Ljudi [shape=diamond, label="n:m"];
+    
+	"Kvantumy" -> "Nazvanie_kvantuma" 
+	"Kvantumy" -> Kvantum_Prepodavatel -> "Prepodavateli"
+	"Kvantumy" -> Kvantum_Uroven_obuchenija -> "Uroveni_obuchenija"
+
+	"Uroveni_obuchenija" -> "Uroven'"
+	"Uroveni_obuchenija" -> Uroven_obuchenija_Prepodavatel -> "Prepodavateli"
+	"Uroveni_obuchenija" -> "Kolichestvo chasov"
+	"Uroveni_obuchenija" -> Uroven_obuchenija_Gruppa -> "Uchebnye_gruppy"
+
+	"Uchashhiesja" -> Uchashhijsja_Adres -> "Adresa"
+	"Uchashhiesja" -> Uchashhijsja_Uchebnoe_zavedenie -> "Uchebnye_zavedenija"
+	"Uchashhiesja" -> Uchashhijsja_Klass -> "Klassy"
+	"Uchashhiesja" -> Uchashhijsja_Ljudi -> "Ljudi"
+	"Uchashhiesja" -> Uchashhijsja_Roditel -> "Roditeli"
+	"Uchashhiesja" -> Uchashhijsja_Gruppa -> "Uchebnye_gruppy"
+	"Uchashhiesja" -> Uchashhijsja_Prikaz -> "Prikazy"
+	"Uchashhiesja" -> Uchashhijsja_Sertifikat -> "Sertifikaty"
+
+	"Prikazy" -> "Vid_prikaza"
+
+	"Sertifikaty" -> "Nomer_sertifikata"
+	"Sertifikaty" -> Sertifikat_Prikaz -> "Prikazy"
+
+	"Uchebnye_gruppy" -> "Nazvanie_gruppy"
+	"Uchebnye_gruppy" -> "God_zachislenija"
+
+	"Adresa" -> "Polnyj_adres"
+	"Adresa" -> Adres_Gorod -> "Goroda"
+
+	"Klassy" -> "Nomer_klassa"
+
+	"Uchebnye_zavedenija" -> Uchebnoe_zavedenie_Adres -> "Adresa"
+	"Uchebnye_zavedenija" -> "Nazvanie_uchebnogo_zavedenija"
+	"Uchebnye_zavedenija" -> Uchebnoe_zavedenie_Direktor -> "Direktora"
+	"Uchebnye_zavedenija" -> Uchebnoe_zavedenie_Kontaktnoe_lico -> "Kontaktnye_lica"
+
+	"Goroda" -> "Nazvanie_goroda"
+
+	"Prikazy" -> "Nomer_prikaza"
+	"Prikazy" -> "Tekst"
+
+	"Prepodavateli" -> Prepodavatel_Ljudi -> "Ljudi"
+	
+	"Direktora" -> Direktor_Ljudi -> "Ljudi"
+
+	"Kontaktnye_lica" -> Kontaktnoe_lico_Ljudi -> "Ljudi"
+
+	"Roditeli" -> Roditel_Ljudi -> "Ljudi"
+	
+	"Ljudi" -> "FIO"
+	"Ljudi" -> "Nomer_telefona"
+	"Ljudi" -> "Adres_jelektronnoj_pochty"
+
+
+}
+
+
