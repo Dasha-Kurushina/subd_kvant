@@ -1,13 +1,4 @@
-#    "Uchebnye_gruppy" [
-#    shape=none
-#    label = '<'
-#      <table border="0" cellspacing="0" cellborder="1">
-#        <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Uchebnye_gruppy </font></td></tr>
-#        <tr><td bgcolor="grey96" align="left" port="id"><font face="Times-bold"> id </font></td><td align="left" port="id_right"><font color="#535353"> integer primary key not null </font></td></tr>
-#        <tr><td bgcolor="grey96" align="left" port="Nazvanie_gruppy"><font face="Times-bold"> Nazvanie_gruppy </font></td><td align="left" port="Nazvanie_gruppy_right"><font color="#535353"> text </font></td></tr>
-#        <tr><td bgcolor="grey96" align="left" port="God_zachislenija"><font face="Times-bold"> God_zachislenija </font></td><td align="left" port="God_zachislenija_right"><font color="#535353"> text </font></td></tr>
-#      </table>
-#    >];
+
 def graphviz(filename):
     out = "digraph g { \n\tgraph [ rankdir = \"LR\" ];\n"
     a_file = [ x.strip() for x in open(filename).readlines() ]
@@ -22,7 +13,7 @@ def graphviz(filename):
     shape=none
     label = <
       <table border="0" cellspacing="0" cellborder="1">
-      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> %s </font></td></tr>
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Arial"> %s </font></td></tr>
 """ % (table_name, table_name)
             ss = ''
             while line != ');':
@@ -31,7 +22,7 @@ def graphviz(filename):
                 try:
                     aname, atype = line.strip(',').split(maxsplit=1)
                     assert aname != 'foreign'
-                    ss += '<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> %s </font></td><td align="left"><font color="#535353"> %s </font></td></tr>' % (aname, atype)
+                    ss += '      <tr><td bgcolor="grey96" align="right"><font face="Arial"> %s </font></td><td align="left"><font face="Arial"> %s </font></td></tr>\n' % (aname, atype)
                 except ValueError:
                     pass
                 except AssertionError:
@@ -39,8 +30,7 @@ def graphviz(filename):
                     links += [(table_name, table_to)]
                 
             s += ss
-            s += """
-      </table>
+            s += """      </table>
     >];"""
             out += s        
         i += 1

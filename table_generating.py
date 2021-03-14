@@ -1,58 +1,66 @@
 import re
+from translit import translify
+from pprint import pprint
 
-x = """create table table2 (
-	a integer primary key not null,
-	b text  unique not null,
-	c real not null
-);"""
+def to_translit(x):
+    return translify(x).replace(' ', '_')
 
 tables = {}
 
-for line in [x.strip() for x in open("translit.dot").readlines() if x.find('>') == -1 ]:
+for line in [x.strip() for x in open("digraphg.dot").readlines() if x.find('>') == -1 ]:
     if line.find('"') == 0:
-        print(line)
-        tables.update({line.strip('"'): ['id integer primary key not null']})
+        table_name = to_translit(line.split('[')[0].strip('" '))
+        tables.update({table_name: ['id integer primary key not null']})
+
+pprint(tables)
         
-        
-for line in [x.strip() for x in open("translit.dot").readlines() if x.find('>') != -1 ]:
+for line in [x.strip() for x in open("digraphg.dot").readlines() if x.find('>') != -1 ]:
     if line.count('->') == 1:
-        print([ x.strip('" ') for x in line.split('->')])
-        table, field = [ x.strip('"\' ') for x in line.split('->')]
+        table, field = [ to_translit(x.strip('"\' ')) for x in line.split('->')]
+        if field.count('['):
+            field = field.split('[')[0].strip('_"')
         tables[table] += ['%s text' % field ]
-        
+
+pprint(tables)
+
 one2many = []
-for line in [x.strip() for x in open("translit.dot").readlines() if x.find('n:1') != -1]:
-    print(line.split()[0])
-    one2many += [line.split()[0]]
-    
-for line in [x.strip() for x in open("translit.dot").readlines() if x.find('>') != -1 ]:
+
+for line in [x.strip() for x in open("digraphg.dot").readlines() if x.find('n:1') != -1]:
+    one2many += [to_translit(line.split()[0])]
+
+pprint(one2many)
+
+for line in [x.strip() for x in open("digraphg.dot").readlines() if x.find('>') != -1 ]:
     if line.count('->') == 2:
-        print([ x.strip('" ') for x in line.split('->')])
-        table_from, rel, table_to = [ x.strip('" ') for x in line.split('->')]
-#        tables[table] += ['%s text' % field ]
+        table_from, rel, table_to = [ to_translit(x.strip('" ')) for x in line.split('->')]
         if rel in one2many:
-            print(table_from, rel, table_to)
+            if table_to.count('['):
+                table_to = table_to.split('[')[0].strip('_"')
             table_to_id = '%s_id' % table_to
             tables[table_from] += ['%s integer' % table_to_id ]
             tables[table_from] += ['foreign key (%s) references %s(id) ' % (table_to_id, table_to) ]
         
+pprint(tables)
+
 many2many = []
-for line in [x.strip() for x in open("translit.dot").readlines() if x.find('n:m') != -1]:
-    print(line.split()[0])
-    many2many += [line.split()[0]]
+for line in [x.strip() for x in open("digraphg.dot").readlines() if x.find('n:m') != -1]:
+    many2many += [to_translit(line.split()[0])]
     
-for line in [x.strip() for x in open("translit.dot").readlines() if x.find('>') != -1 ]:
+pprint(many2many)
+
+for line in [x.strip() for x in open("digraphg.dot").readlines() if x.find('>') != -1 ]:
     if line.count('->') == 2:
-        print([ x.strip('" ') for x in line.split('->')])
-        table_from, rel, table_to = [ x.strip('" ') for x in line.split('->')]
-#        tables[table] += ['%s text' % field ]
+        table_from, rel, table_to = [ to_translit(x.strip('" ')) for x in line.split('->')]
+        if table_to.count('['):
+            table_to = table_to.split('[')[0].strip('_"')
         if rel in many2many:
-            print(table_from, rel, table_to)
             tables.update({rel: ['id integer primary key not null']})
             for table in [table_from, table_to]:
                 table_id = '%s_id' % table
                 tables[rel] += ['%s integer' % table_id ]
                 tables[rel] += ['foreign key (%s) references %s(id) ' % (table_id, table)]
+
+pprint(tables)
 
 created_tables = []
 script = ''
