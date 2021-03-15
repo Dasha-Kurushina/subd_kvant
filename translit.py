@@ -172,12 +172,7 @@ def detranslify(in_string):
 
     @raise ValueError: if in_string is C{str}, but it isn't ascii
     """
-    try:
-        russian = six.text_type(in_string)
-    except UnicodeDecodeError:
-        raise ValueError("We expects if in_string is 8-bit string," + \
-                         "then it consists only ASCII chars, but now it doesn't. " + \
-                         "Use unicode in this case.")
+    russian = in_string
 
     for symb_out, symb_in in TRANSTABLE:
         russian = russian.replace(symb_in, symb_out)

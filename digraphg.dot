@@ -14,7 +14,8 @@ digraph g {
 	"Преподаватели" [shape=rect];
 	"Родители" [shape=rect];
 	"Директора" [shape=rect];
-	"Контактные лица" [shape=rect];
+	"Контактные лица" [shape=rect];	
+
 
 	Kvantum_Prepodavatel [shape=diamond, label="n:m"];
 	Kvantum_Uroven_obuchenija [shape=diamond, label="n:m"];
@@ -37,7 +38,7 @@ digraph g {
 	Direktor_Ljudi [shape=diamond, label="n:m"];
 	Kontaktnoe_lico_Ljudi [shape=diamond, label="n:m"];
 	Roditel_Ljudi [shape=diamond, label="n:m"];
-    
+   
 	"Квантумы" -> "Название квантума" [arrowhead="none"] 
 	"Квантумы" -> Kvantum_Prepodavatel -> "Преподаватели" [arrowhead="none"]
 	"Квантумы" -> Kvantum_Uroven_obuchenija -> "Уровени обучения" [arrowhead="none"]

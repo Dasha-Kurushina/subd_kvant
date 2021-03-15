@@ -1,0 +1,25 @@
+В базе данных есть таблица "Kvantumyi", в которой хранятся такие свойства, как Nazvanie_kvantuma c типом text и первичный ключ "id". 
+В базе данных существует таблица "Uchebnyie_gruppyi", хранящая в себе данные атрибуты: Nazvanie_gruppyi c типом text, God_zachisleniya c типом text и первичный ключ "id".
+База данных имеет таблицу "Uroveni_obucheniya", со свойствами Uroven c типом text, Kolichestvo_chasov c типом text, Uchebnyie_gruppyi_id c типом integer, первичным ключом "id" и внешним ключом "Uchebnyie_gruppyi_id".
+База данных имеет таблицу "Adresa", со свойствами Polnyij_adres c типом text, Goroda_id c типом integer, первичным ключом "id" и внешним ключом "Goroda_id".
+База данных содержит таблицу "Uchebnyie_zavedeniya" с атрибутами: Nazvanie_uchebnogo_zavedeniya c типом text, Adresa_id c типом integer, Direktora_id c типом integer, Kontaktnyie_litsa_id c типом integer, а также она имеет первичный ключ" id" и внешний ключ:"Adresa_id, Direktora_id, Kontaktnyie_litsa_id".
+В базе данных существует таблица "Klassyi", хранящая в себе данные атрибуты: Nomer_klassa c типом text и первичный ключ "id".
+Также в базе есть таблица "Roditeli", в которой хранятся следующие данные:  и первичный ключ "id".
+База данных содержит таблицу "Sertifikatyi" с атрибутами: Nomer_sertifikata c типом text, Prikazyi_id c типом integer, а также она имеет первичный ключ" id" и внешний ключ:"Prikazyi_id".
+База данных имеет таблицу "Uchaschiesya", со свойствами Adresa_id c типом integer, Uchebnyie_zavedeniya_id c типом integer, Klassyi_id c типом integer, Roditeli_id c типом integer, Sertifikatyi_id c типом integer, первичным ключом "id" и внешним ключом "Adresa_id, Uchebnyie_zavedeniya_id, Klassyi_id, Roditeli_id, Sertifikatyi_id".
+Также в базе есть таблица "Prikazyi", в которой хранятся следующие данные: Vid_prikaza c типом text, Nomer_prikaza c типом text, Tekst c типом text и первичный ключ "id".
+Также в базе есть таблица "Goroda", в которой хранятся следующие данные: Nazvanie_goroda c типом text и первичный ключ "id".
+Также в базе есть таблица "Direktora", в которой хранятся следующие данные:  и первичный ключ "id".
+В базе данных существует таблица "Kontaktnyie_litsa", хранящая в себе данные атрибуты:  и первичный ключ "id".
+В базе данных существует таблица "Lyudi", хранящая в себе данные атрибуты: FIO c типом text, Nomer_telefona c типом text, Adres_elektronnoj_pochtyi c типом text и первичный ключ "id".
+В базе данных существует таблица "Prepodavateli", хранящая в себе данные атрибуты:  и первичный ключ "id".
+База данных имеет таблицу "Kvantum_Prepodavatel", со свойствами Kvantumyi_id c типом integer, Prepodavateli_id c типом integer, первичным ключом "id" и внешним ключом "Kvantumyi_id, Prepodavateli_id".
+База данных содержит таблицу "Kvantum_Uroven_obuchenija" с атрибутами: Kvantumyi_id c типом integer, Uroveni_obucheniya_id c типом integer, а также она имеет первичный ключ" id" и внешний ключ:"Kvantumyi_id, Uroveni_obucheniya_id".
+База данных имеет таблицу "Uroven_obuchenija_Prepodavatel" с атрибутами: Uroveni_obucheniya_id c типом integer, Prepodavateli_id c типом integer, первичным ключом "id" и внешними ключами: "Uroveni_obucheniya_id, Prepodavateli_id".
+База данных имеет таблицу "Uchashhijsja_Ljudi", со свойствами Uchaschiesya_id c типом integer, Lyudi_id c типом integer, первичным ключом "id" и внешним ключом "Uchaschiesya_id, Lyudi_id".
+База данных имеет таблицу "Uchashhijsja_Gruppa" с атрибутами: Uchaschiesya_id c типом integer, Uchebnyie_gruppyi_id c типом integer, первичным ключом "id" и внешними ключами: "Uchaschiesya_id, Uchebnyie_gruppyi_id".
+База данных имеет таблицу "Uchashhijsja_Prikaz" с атрибутами: Uchaschiesya_id c типом integer, Prikazyi_id c типом integer, первичным ключом "id" и внешними ключами: "Uchaschiesya_id, Prikazyi_id".
+База данных имеет таблицу "Prepodavatel_Ljudi", со свойствами Prepodavateli_id c типом integer, Lyudi_id c типом integer, первичным ключом "id" и внешним ключом "Prepodavateli_id, Lyudi_id".
+База данных имеет таблицу "Direktor_Ljudi", со свойствами Direktora_id c типом integer, Lyudi_id c типом integer, первичным ключом "id" и внешним ключом "Direktora_id, Lyudi_id".
+База данных содержит таблицу "Kontaktnoe_lico_Ljudi" с атрибутами: Kontaktnyie_litsa_id c типом integer, Lyudi_id c типом integer, а также она имеет первичный ключ" id" и внешний ключ:"Kontaktnyie_litsa_id, Lyudi_id".
+База данных имеет таблицу "Roditel_Ljudi" с атрибутами: Roditeli_id c типом integer, Lyudi_id c типом integer, первичным ключом "id" и внешними ключами: "Roditeli_id, Lyudi_id".
