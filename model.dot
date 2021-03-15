@@ -1,234 +1,281 @@
 digraph g { 
 	graph [ rankdir = "LR" ];
 
-    "Kvantumy" [
+    "Kvantumyi" [
     shape=none
     label = <
       <table border="0" cellspacing="0" cellborder="1">
-      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Kvantumy </font></td></tr>
-<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Nazvanie_kvantuma </font></td><td align="left"><font color="#535353"> text </font></td></tr>
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Arial"> Kvantumyi </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> id </font></td><td align="left"><font face="Arial"> integer primary key not null </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Nazvanie_kvantuma </font></td><td align="left"><font face="Arial"> text </font></td></tr>
       </table>
     >];
-    "Uchebnye_gruppy" [
+    "Uchebnyie_gruppyi" [
     shape=none
     label = <
       <table border="0" cellspacing="0" cellborder="1">
-      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Uchebnye_gruppy </font></td></tr>
-<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Nazvanie_gruppy </font></td><td align="left"><font color="#535353"> text </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> God_zachislenija </font></td><td align="left"><font color="#535353"> text </font></td></tr>
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Arial"> Uchebnyie_gruppyi </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> id </font></td><td align="left"><font face="Arial"> integer primary key not null </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Nazvanie_gruppyi </font></td><td align="left"><font face="Arial"> text </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> God_zachisleniya </font></td><td align="left"><font face="Arial"> text </font></td></tr>
       </table>
     >];
-    "Uroveni_obuchenija" [
+    "Uroveni_obucheniya" [
     shape=none
     label = <
       <table border="0" cellspacing="0" cellborder="1">
-      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Uroveni_obuchenija </font></td></tr>
-<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Uroven </font></td><td align="left"><font color="#535353"> text </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Kolichestvo </font></td><td align="left"><font color="#535353"> chasov text </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Uchebnye_gruppy_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Arial"> Uroveni_obucheniya </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> id </font></td><td align="left"><font face="Arial"> integer primary key not null </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Uroven </font></td><td align="left"><font face="Arial"> text </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Kolichestvo_chasov </font></td><td align="left"><font face="Arial"> text </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Uchebnyie_gruppyi_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
       </table>
     >];
     "Adresa" [
     shape=none
     label = <
       <table border="0" cellspacing="0" cellborder="1">
-      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Adresa </font></td></tr>
-<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Polnyj_adres </font></td><td align="left"><font color="#535353"> text </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Goroda_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Arial"> Adresa </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> id </font></td><td align="left"><font face="Arial"> integer primary key not null </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Polnyij_adres </font></td><td align="left"><font face="Arial"> text </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Goroda_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
       </table>
     >];
-    "Uchebnye_zavedenija" [
+    "Uchebnyie_zavedeniya" [
     shape=none
     label = <
       <table border="0" cellspacing="0" cellborder="1">
-      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Uchebnye_zavedenija </font></td></tr>
-<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Nazvanie_uchebnogo_zavedenija </font></td><td align="left"><font color="#535353"> text </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Adresa_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Direktora_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Kontaktnye_lica_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Arial"> Uchebnyie_zavedeniya </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> id </font></td><td align="left"><font face="Arial"> integer primary key not null </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Nazvanie_uchebnogo_zavedeniya </font></td><td align="left"><font face="Arial"> text </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Adresa_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Direktora_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Kontaktnyie_litsa_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
       </table>
     >];
-    "Klassy" [
+    "Klassyi" [
     shape=none
     label = <
       <table border="0" cellspacing="0" cellborder="1">
-      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Klassy </font></td></tr>
-<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Nomer_klassa </font></td><td align="left"><font color="#535353"> text </font></td></tr>
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Arial"> Klassyi </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> id </font></td><td align="left"><font face="Arial"> integer primary key not null </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Nomer_klassa </font></td><td align="left"><font face="Arial"> text </font></td></tr>
       </table>
     >];
     "Roditeli" [
     shape=none
     label = <
       <table border="0" cellspacing="0" cellborder="1">
-      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Roditeli </font></td></tr>
-<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr>
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Arial"> Roditeli </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> id </font></td><td align="left"><font face="Arial"> integer primary key not null </font></td></tr>
       </table>
     >];
-    "Sertifikaty" [
+    "Sertifikatyi" [
     shape=none
     label = <
       <table border="0" cellspacing="0" cellborder="1">
-      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Sertifikaty </font></td></tr>
-<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Nomer_sertifikata </font></td><td align="left"><font color="#535353"> text </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Prikazy_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Arial"> Sertifikatyi </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> id </font></td><td align="left"><font face="Arial"> integer primary key not null </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Nomer_sertifikata </font></td><td align="left"><font face="Arial"> text </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Prikazyi_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
       </table>
     >];
-    "Uchashhiesja" [
+    "Uchaschiesya" [
     shape=none
     label = <
       <table border="0" cellspacing="0" cellborder="1">
-      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Uchashhiesja </font></td></tr>
-<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Adresa_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Uchebnye_zavedenija_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Klassy_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Roditeli_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Sertifikaty_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Arial"> Uchaschiesya </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> id </font></td><td align="left"><font face="Arial"> integer primary key not null </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Adresa_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Uchebnyie_zavedeniya_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Klassyi_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Roditeli_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Sertifikatyi_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
       </table>
     >];
-    "Prikazy" [
+    "Prikazyi" [
     shape=none
     label = <
       <table border="0" cellspacing="0" cellborder="1">
-      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Prikazy </font></td></tr>
-<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Vid_prikaza </font></td><td align="left"><font color="#535353"> text </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Nomer_prikaza </font></td><td align="left"><font color="#535353"> text </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Tekst </font></td><td align="left"><font color="#535353"> text </font></td></tr>
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Arial"> Prikazyi </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> id </font></td><td align="left"><font face="Arial"> integer primary key not null </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Vid_prikaza </font></td><td align="left"><font face="Arial"> text </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Nomer_prikaza </font></td><td align="left"><font face="Arial"> text </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Tekst </font></td><td align="left"><font face="Arial"> text </font></td></tr>
       </table>
     >];
     "Goroda" [
     shape=none
     label = <
       <table border="0" cellspacing="0" cellborder="1">
-      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Goroda </font></td></tr>
-<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Nazvanie_goroda </font></td><td align="left"><font color="#535353"> text </font></td></tr>
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Arial"> Goroda </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> id </font></td><td align="left"><font face="Arial"> integer primary key not null </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Nazvanie_goroda </font></td><td align="left"><font face="Arial"> text </font></td></tr>
       </table>
     >];
     "Direktora" [
     shape=none
     label = <
       <table border="0" cellspacing="0" cellborder="1">
-      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Direktora </font></td></tr>
-<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr>
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Arial"> Direktora </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> id </font></td><td align="left"><font face="Arial"> integer primary key not null </font></td></tr>
       </table>
     >];
-    "Kontaktnye_lica" [
+    "Kontaktnyie_litsa" [
     shape=none
     label = <
       <table border="0" cellspacing="0" cellborder="1">
-      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Kontaktnye_lica </font></td></tr>
-<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr>
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Arial"> Kontaktnyie_litsa </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> id </font></td><td align="left"><font face="Arial"> integer primary key not null </font></td></tr>
       </table>
     >];
-    "Ljudi" [
+    "Lyudi" [
     shape=none
     label = <
       <table border="0" cellspacing="0" cellborder="1">
-      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Ljudi </font></td></tr>
-<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> FIO </font></td><td align="left"><font color="#535353"> text </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Nomer_telefona </font></td><td align="left"><font color="#535353"> text </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Adres_jelektronnoj_pochty </font></td><td align="left"><font color="#535353"> text </font></td></tr>
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Arial"> Lyudi </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> id </font></td><td align="left"><font face="Arial"> integer primary key not null </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> FIO </font></td><td align="left"><font face="Arial"> text </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Nomer_telefona </font></td><td align="left"><font face="Arial"> text </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Adres_elektronnoj_pochtyi </font></td><td align="left"><font face="Arial"> text </font></td></tr>
       </table>
     >];
     "Prepodavateli" [
     shape=none
     label = <
       <table border="0" cellspacing="0" cellborder="1">
-      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Prepodavateli </font></td></tr>
-<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr>
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Arial"> Prepodavateli </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> id </font></td><td align="left"><font face="Arial"> integer primary key not null </font></td></tr>
       </table>
     >];
     "Kvantum_Prepodavatel" [
     shape=none
     label = <
       <table border="0" cellspacing="0" cellborder="1">
-      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Kvantum_Prepodavatel </font></td></tr>
-<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Kvantumy_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Prepodavateli_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Arial"> Kvantum_Prepodavatel </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> id </font></td><td align="left"><font face="Arial"> integer primary key not null </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Kvantumyi_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Prepodavateli_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
       </table>
     >];
     "Kvantum_Uroven_obuchenija" [
     shape=none
     label = <
       <table border="0" cellspacing="0" cellborder="1">
-      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Kvantum_Uroven_obuchenija </font></td></tr>
-<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Kvantumy_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Uroveni_obuchenija_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Arial"> Kvantum_Uroven_obuchenija </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> id </font></td><td align="left"><font face="Arial"> integer primary key not null </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Kvantumyi_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Uroveni_obucheniya_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
       </table>
     >];
     "Uroven_obuchenija_Prepodavatel" [
     shape=none
     label = <
       <table border="0" cellspacing="0" cellborder="1">
-      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Uroven_obuchenija_Prepodavatel </font></td></tr>
-<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Uroveni_obuchenija_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Prepodavateli_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Arial"> Uroven_obuchenija_Prepodavatel </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> id </font></td><td align="left"><font face="Arial"> integer primary key not null </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Uroveni_obucheniya_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Prepodavateli_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
       </table>
     >];
     "Uchashhijsja_Ljudi" [
     shape=none
     label = <
       <table border="0" cellspacing="0" cellborder="1">
-      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Uchashhijsja_Ljudi </font></td></tr>
-<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Uchashhiesja_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Ljudi_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Arial"> Uchashhijsja_Ljudi </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> id </font></td><td align="left"><font face="Arial"> integer primary key not null </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Uchaschiesya_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Lyudi_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
       </table>
     >];
     "Uchashhijsja_Gruppa" [
     shape=none
     label = <
       <table border="0" cellspacing="0" cellborder="1">
-      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Uchashhijsja_Gruppa </font></td></tr>
-<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Uchashhiesja_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Uchebnye_gruppy_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Arial"> Uchashhijsja_Gruppa </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> id </font></td><td align="left"><font face="Arial"> integer primary key not null </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Uchaschiesya_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Uchebnyie_gruppyi_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
       </table>
     >];
     "Uchashhijsja_Prikaz" [
     shape=none
     label = <
       <table border="0" cellspacing="0" cellborder="1">
-      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Uchashhijsja_Prikaz </font></td></tr>
-<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Uchashhiesja_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Prikazy_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Arial"> Uchashhijsja_Prikaz </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> id </font></td><td align="left"><font face="Arial"> integer primary key not null </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Uchaschiesya_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Prikazyi_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
       </table>
     >];
     "Prepodavatel_Ljudi" [
     shape=none
     label = <
       <table border="0" cellspacing="0" cellborder="1">
-      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Prepodavatel_Ljudi </font></td></tr>
-<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Prepodavateli_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Ljudi_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Arial"> Prepodavatel_Ljudi </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> id </font></td><td align="left"><font face="Arial"> integer primary key not null </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Prepodavateli_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Lyudi_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
       </table>
     >];
     "Direktor_Ljudi" [
     shape=none
     label = <
       <table border="0" cellspacing="0" cellborder="1">
-      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Direktor_Ljudi </font></td></tr>
-<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Direktora_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Ljudi_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Arial"> Direktor_Ljudi </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> id </font></td><td align="left"><font face="Arial"> integer primary key not null </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Direktora_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Lyudi_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
       </table>
     >];
     "Kontaktnoe_lico_Ljudi" [
     shape=none
     label = <
       <table border="0" cellspacing="0" cellborder="1">
-      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Kontaktnoe_lico_Ljudi </font></td></tr>
-<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Kontaktnye_lica_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Ljudi_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Arial"> Kontaktnoe_lico_Ljudi </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> id </font></td><td align="left"><font face="Arial"> integer primary key not null </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Kontaktnyie_litsa_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Lyudi_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
       </table>
     >];
     "Roditel_Ljudi" [
     shape=none
     label = <
       <table border="0" cellspacing="0" cellborder="1">
-      <tr><td bgcolor="lightblue2" colspan="2"><font face="Times-bold" point-size="20"> Roditel_Ljudi </font></td></tr>
-<tr><td bgcolor="grey96" align="right"><font face="Times-bold"> id </font></td><td align="left"><font color="#535353"> integer primary key not null </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Roditeli_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr><tr><td bgcolor="grey96" align="right"><font face="Times-bold"> Ljudi_id </font></td><td align="left"><font color="#535353"> integer </font></td></tr>
+      <tr><td bgcolor="lightblue2" colspan="2"><font face="Arial"> Roditel_Ljudi </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> id </font></td><td align="left"><font face="Arial"> integer primary key not null </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Roditeli_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
+      <tr><td bgcolor="grey96" align="right"><font face="Arial"> Lyudi_id </font></td><td align="left"><font face="Arial"> integer </font></td></tr>
       </table>
-    >];	 Uroveni_obuchenija -> Uchebnye_gruppy [arrowhead="none"]
+    >];	 Uroveni_obucheniya -> Uchebnyie_gruppyi [arrowhead="none"]
 	 Adresa -> Goroda [arrowhead="none"]
-	 Uchebnye_zavedenija -> Adresa [arrowhead="none"]
-	 Uchebnye_zavedenija -> Direktora [arrowhead="none"]
-	 Uchebnye_zavedenija -> Kontaktnye_lica [arrowhead="none"]
-	 Sertifikaty -> Prikazy [arrowhead="none"]
-	 Uchashhiesja -> Adresa [arrowhead="none"]
-	 Uchashhiesja -> Uchebnye_zavedenija [arrowhead="none"]
-	 Uchashhiesja -> Klassy [arrowhead="none"]
-	 Uchashhiesja -> Roditeli [arrowhead="none"]
-	 Uchashhiesja -> Sertifikaty [arrowhead="none"]
-	 Kvantum_Prepodavatel -> Kvantumy [arrowhead="none"]
+	 Uchebnyie_zavedeniya -> Adresa [arrowhead="none"]
+	 Uchebnyie_zavedeniya -> Direktora [arrowhead="none"]
+	 Uchebnyie_zavedeniya -> Kontaktnyie_litsa [arrowhead="none"]
+	 Sertifikatyi -> Prikazyi [arrowhead="none"]
+	 Uchaschiesya -> Adresa [arrowhead="none"]
+	 Uchaschiesya -> Uchebnyie_zavedeniya [arrowhead="none"]
+	 Uchaschiesya -> Klassyi [arrowhead="none"]
+	 Uchaschiesya -> Roditeli [arrowhead="none"]
+	 Uchaschiesya -> Sertifikatyi [arrowhead="none"]
+	 Kvantum_Prepodavatel -> Kvantumyi [arrowhead="none"]
 	 Kvantum_Prepodavatel -> Prepodavateli [arrowhead="none"]
-	 Kvantum_Uroven_obuchenija -> Kvantumy [arrowhead="none"]
-	 Kvantum_Uroven_obuchenija -> Uroveni_obuchenija [arrowhead="none"]
-	 Uroven_obuchenija_Prepodavatel -> Uroveni_obuchenija [arrowhead="none"]
+	 Kvantum_Uroven_obuchenija -> Kvantumyi [arrowhead="none"]
+	 Kvantum_Uroven_obuchenija -> Uroveni_obucheniya [arrowhead="none"]
+	 Uroven_obuchenija_Prepodavatel -> Uroveni_obucheniya [arrowhead="none"]
 	 Uroven_obuchenija_Prepodavatel -> Prepodavateli [arrowhead="none"]
-	 Uchashhijsja_Ljudi -> Uchashhiesja [arrowhead="none"]
-	 Uchashhijsja_Ljudi -> Ljudi [arrowhead="none"]
-	 Uchashhijsja_Gruppa -> Uchashhiesja [arrowhead="none"]
-	 Uchashhijsja_Gruppa -> Uchebnye_gruppy [arrowhead="none"]
-	 Uchashhijsja_Prikaz -> Uchashhiesja [arrowhead="none"]
-	 Uchashhijsja_Prikaz -> Prikazy [arrowhead="none"]
+	 Uchashhijsja_Ljudi -> Uchaschiesya [arrowhead="none"]
+	 Uchashhijsja_Ljudi -> Lyudi [arrowhead="none"]
+	 Uchashhijsja_Gruppa -> Uchaschiesya [arrowhead="none"]
+	 Uchashhijsja_Gruppa -> Uchebnyie_gruppyi [arrowhead="none"]
+	 Uchashhijsja_Prikaz -> Uchaschiesya [arrowhead="none"]
+	 Uchashhijsja_Prikaz -> Prikazyi [arrowhead="none"]
 	 Prepodavatel_Ljudi -> Prepodavateli [arrowhead="none"]
-	 Prepodavatel_Ljudi -> Ljudi [arrowhead="none"]
+	 Prepodavatel_Ljudi -> Lyudi [arrowhead="none"]
 	 Direktor_Ljudi -> Direktora [arrowhead="none"]
-	 Direktor_Ljudi -> Ljudi [arrowhead="none"]
-	 Kontaktnoe_lico_Ljudi -> Kontaktnye_lica [arrowhead="none"]
-	 Kontaktnoe_lico_Ljudi -> Ljudi [arrowhead="none"]
+	 Direktor_Ljudi -> Lyudi [arrowhead="none"]
+	 Kontaktnoe_lico_Ljudi -> Kontaktnyie_litsa [arrowhead="none"]
+	 Kontaktnoe_lico_Ljudi -> Lyudi [arrowhead="none"]
 	 Roditel_Ljudi -> Roditeli [arrowhead="none"]
-	 Roditel_Ljudi -> Ljudi [arrowhead="none"]
+	 Roditel_Ljudi -> Lyudi [arrowhead="none"]
 }

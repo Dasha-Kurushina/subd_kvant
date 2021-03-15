@@ -1,41 +1,41 @@
-create table Kvantumy (
+create table Kvantumyi (
 	id integer primary key not null,
 	Nazvanie_kvantuma text
 );
 
-create table Uchebnye_gruppy (
+create table Uchebnyie_gruppyi (
 	id integer primary key not null,
-	Nazvanie_gruppy text,
-	God_zachislenija text
+	Nazvanie_gruppyi text,
+	God_zachisleniya text
 );
 
-create table Uroveni_obuchenija (
+create table Uroveni_obucheniya (
 	id integer primary key not null,
 	Uroven text,
-	Kolichestvo chasov text,
-	Uchebnye_gruppy_id integer,
-	foreign key (Uchebnye_gruppy_id) references Uchebnye_gruppy(id) 
+	Kolichestvo_chasov text,
+	Uchebnyie_gruppyi_id integer,
+	foreign key (Uchebnyie_gruppyi_id) references Uchebnyie_gruppyi(id) 
 );
 
 create table Adresa (
 	id integer primary key not null,
-	Polnyj_adres text,
+	Polnyij_adres text,
 	Goroda_id integer,
 	foreign key (Goroda_id) references Goroda(id) 
 );
 
-create table Uchebnye_zavedenija (
+create table Uchebnyie_zavedeniya (
 	id integer primary key not null,
-	Nazvanie_uchebnogo_zavedenija text,
+	Nazvanie_uchebnogo_zavedeniya text,
 	Adresa_id integer,
 	Direktora_id integer,
-	Kontaktnye_lica_id integer,
+	Kontaktnyie_litsa_id integer,
 	foreign key (Adresa_id) references Adresa(id) ,
 	foreign key (Direktora_id) references Direktora(id) ,
-	foreign key (Kontaktnye_lica_id) references Kontaktnye_lica(id) 
+	foreign key (Kontaktnyie_litsa_id) references Kontaktnyie_litsa(id) 
 );
 
-create table Klassy (
+create table Klassyi (
 	id integer primary key not null,
 	Nomer_klassa text
 );
@@ -44,28 +44,28 @@ create table Roditeli (
 	id integer primary key not null
 );
 
-create table Sertifikaty (
+create table Sertifikatyi (
 	id integer primary key not null,
 	Nomer_sertifikata text,
-	Prikazy_id integer,
-	foreign key (Prikazy_id) references Prikazy(id) 
+	Prikazyi_id integer,
+	foreign key (Prikazyi_id) references Prikazyi(id) 
 );
 
-create table Uchashhiesja (
+create table Uchaschiesya (
 	id integer primary key not null,
 	Adresa_id integer,
-	Uchebnye_zavedenija_id integer,
-	Klassy_id integer,
+	Uchebnyie_zavedeniya_id integer,
+	Klassyi_id integer,
 	Roditeli_id integer,
-	Sertifikaty_id integer,
+	Sertifikatyi_id integer,
 	foreign key (Adresa_id) references Adresa(id) ,
-	foreign key (Uchebnye_zavedenija_id) references Uchebnye_zavedenija(id) ,
-	foreign key (Klassy_id) references Klassy(id) ,
+	foreign key (Uchebnyie_zavedeniya_id) references Uchebnyie_zavedeniya(id) ,
+	foreign key (Klassyi_id) references Klassyi(id) ,
 	foreign key (Roditeli_id) references Roditeli(id) ,
-	foreign key (Sertifikaty_id) references Sertifikaty(id) 
+	foreign key (Sertifikatyi_id) references Sertifikatyi(id) 
 );
 
-create table Prikazy (
+create table Prikazyi (
 	id integer primary key not null,
 	Vid_prikaza text,
 	Nomer_prikaza text,
@@ -81,15 +81,15 @@ create table Direktora (
 	id integer primary key not null
 );
 
-create table Kontaktnye_lica (
+create table Kontaktnyie_litsa (
 	id integer primary key not null
 );
 
-create table Ljudi (
+create table Lyudi (
 	id integer primary key not null,
 	FIO text,
 	Nomer_telefona text,
-	Adres_jelektronnoj_pochty text
+	Adres_elektronnoj_pochtyi text
 );
 
 create table Prepodavateli (
@@ -98,81 +98,81 @@ create table Prepodavateli (
 
 create table Kvantum_Prepodavatel (
 	id integer primary key not null,
-	Kvantumy_id integer,
+	Kvantumyi_id integer,
 	Prepodavateli_id integer,
-	foreign key (Kvantumy_id) references Kvantumy(id) ,
+	foreign key (Kvantumyi_id) references Kvantumyi(id) ,
 	foreign key (Prepodavateli_id) references Prepodavateli(id) 
 );
 
 create table Kvantum_Uroven_obuchenija (
 	id integer primary key not null,
-	Kvantumy_id integer,
-	Uroveni_obuchenija_id integer,
-	foreign key (Kvantumy_id) references Kvantumy(id) ,
-	foreign key (Uroveni_obuchenija_id) references Uroveni_obuchenija(id) 
+	Kvantumyi_id integer,
+	Uroveni_obucheniya_id integer,
+	foreign key (Kvantumyi_id) references Kvantumyi(id) ,
+	foreign key (Uroveni_obucheniya_id) references Uroveni_obucheniya(id) 
 );
 
 create table Uroven_obuchenija_Prepodavatel (
 	id integer primary key not null,
-	Uroveni_obuchenija_id integer,
+	Uroveni_obucheniya_id integer,
 	Prepodavateli_id integer,
-	foreign key (Uroveni_obuchenija_id) references Uroveni_obuchenija(id) ,
+	foreign key (Uroveni_obucheniya_id) references Uroveni_obucheniya(id) ,
 	foreign key (Prepodavateli_id) references Prepodavateli(id) 
 );
 
 create table Uchashhijsja_Ljudi (
 	id integer primary key not null,
-	Uchashhiesja_id integer,
-	Ljudi_id integer,
-	foreign key (Uchashhiesja_id) references Uchashhiesja(id) ,
-	foreign key (Ljudi_id) references Ljudi(id) 
+	Uchaschiesya_id integer,
+	Lyudi_id integer,
+	foreign key (Uchaschiesya_id) references Uchaschiesya(id) ,
+	foreign key (Lyudi_id) references Lyudi(id) 
 );
 
 create table Uchashhijsja_Gruppa (
 	id integer primary key not null,
-	Uchashhiesja_id integer,
-	Uchebnye_gruppy_id integer,
-	foreign key (Uchashhiesja_id) references Uchashhiesja(id) ,
-	foreign key (Uchebnye_gruppy_id) references Uchebnye_gruppy(id) 
+	Uchaschiesya_id integer,
+	Uchebnyie_gruppyi_id integer,
+	foreign key (Uchaschiesya_id) references Uchaschiesya(id) ,
+	foreign key (Uchebnyie_gruppyi_id) references Uchebnyie_gruppyi(id) 
 );
 
 create table Uchashhijsja_Prikaz (
 	id integer primary key not null,
-	Uchashhiesja_id integer,
-	Prikazy_id integer,
-	foreign key (Uchashhiesja_id) references Uchashhiesja(id) ,
-	foreign key (Prikazy_id) references Prikazy(id) 
+	Uchaschiesya_id integer,
+	Prikazyi_id integer,
+	foreign key (Uchaschiesya_id) references Uchaschiesya(id) ,
+	foreign key (Prikazyi_id) references Prikazyi(id) 
 );
 
 create table Prepodavatel_Ljudi (
 	id integer primary key not null,
 	Prepodavateli_id integer,
-	Ljudi_id integer,
+	Lyudi_id integer,
 	foreign key (Prepodavateli_id) references Prepodavateli(id) ,
-	foreign key (Ljudi_id) references Ljudi(id) 
+	foreign key (Lyudi_id) references Lyudi(id) 
 );
 
 create table Direktor_Ljudi (
 	id integer primary key not null,
 	Direktora_id integer,
-	Ljudi_id integer,
+	Lyudi_id integer,
 	foreign key (Direktora_id) references Direktora(id) ,
-	foreign key (Ljudi_id) references Ljudi(id) 
+	foreign key (Lyudi_id) references Lyudi(id) 
 );
 
 create table Kontaktnoe_lico_Ljudi (
 	id integer primary key not null,
-	Kontaktnye_lica_id integer,
-	Ljudi_id integer,
-	foreign key (Kontaktnye_lica_id) references Kontaktnye_lica(id) ,
-	foreign key (Ljudi_id) references Ljudi(id) 
+	Kontaktnyie_litsa_id integer,
+	Lyudi_id integer,
+	foreign key (Kontaktnyie_litsa_id) references Kontaktnyie_litsa(id) ,
+	foreign key (Lyudi_id) references Lyudi(id) 
 );
 
 create table Roditel_Ljudi (
 	id integer primary key not null,
 	Roditeli_id integer,
-	Ljudi_id integer,
+	Lyudi_id integer,
 	foreign key (Roditeli_id) references Roditeli(id) ,
-	foreign key (Ljudi_id) references Ljudi(id) 
+	foreign key (Lyudi_id) references Lyudi(id) 
 );
 
