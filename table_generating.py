@@ -188,5 +188,5 @@ for table in tables:
     create_table(table)
     
 open('create_tables.sql','w').write(script)
-open('log_model.txt','w').write("\n".join(text))
-open('phyz_model.txt','w').write("\n".join(another_text))
+open('log_model.txt','w').write(" ".join(text))
+open('phyz_model.txt','w').write(" ".join(another_text))
